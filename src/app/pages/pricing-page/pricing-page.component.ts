@@ -1,5 +1,6 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {Meta, Title} from "@angular/platform-browser";
+import {isPlatformBrowser, isPlatformServer} from "@angular/common";
 
 @Component({
   standalone: true,
@@ -10,6 +11,7 @@ import {Meta, Title} from "@angular/platform-browser";
 export default class PricingPageComponent implements OnInit {
   private title = inject(Title);
   private meta = inject(Meta);
+  private platform = inject(PLATFORM_ID);
 
   ngOnInit(): void {
     this.title.setTitle('Pricing Page');
